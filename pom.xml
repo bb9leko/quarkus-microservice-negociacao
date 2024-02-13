@@ -27,7 +27,6 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-  <!-- https://mvnrepository.com/artifact/io.quarkus/quarkus-hibernate-orm-panache -->
   <dependencies>
     <dependency>
       <groupId>io.quarkus</groupId>
@@ -49,6 +48,15 @@
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-smallrye-openapi</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.opentracing.contrib</groupId>
+      <artifactId>opentracing-jdbc</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkiverse.opentracing</groupId>
+      <artifactId>quarkus-smallrye-opentracing</artifactId>
+      <version>1.0.0</version>
     </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>
@@ -84,19 +92,17 @@
         </executions>
       </plugin>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.8.1</version>
         <configuration>
-          <source>1.8</source> <!-- depending on your project -->
-          <target>1.8</target> <!-- depending on your project -->
+          <source>1.8</source>
+          <target>1.8</target>
           <annotationProcessorPaths>
             <path>
               <groupId>org.mapstruct</groupId>
               <artifactId>mapstruct-processor</artifactId>
               <version>1.5.5.Final</version>
             </path>
-                    <!-- other annotation processors -->
           </annotationProcessorPaths>
         </configuration>
       </plugin>
